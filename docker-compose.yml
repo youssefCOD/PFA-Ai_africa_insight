@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  python-app:
+    image: python-grpc-server:latest # Make sure this image exists or is built correctly
+    build:
+      context: ./Africa-AI-Insight-Scraper # Path to your Python service directory
+      dockerfile: Dockerfile # Assuming Dockerfile is in that directory
+    ports:
+      - "50051:50051"
+    # Add restart policy if needed
+    # restart: unless-stopped
+    # Ensure the Python app listens on 0.0.0.0:50051 inside the container
+
+  spring-app:
+    build:
+      context: ./news-service # Path to your Spring Boot service directory
+      dockerfile: Dockerfile # Assuming Dockerfile is in that directory
+    ports:
+      - "8080:8080"
+    environment:
+      # These names will be converted by Spring Boot to match the @Value annotations
+      GRPC_CLIENT_PYTHON_SCRAPER_ADDRESS: python-app
+      GRPC_CLIENT_PYTHON_SCRAPER_PORT: 50051
+    depends_on: # Optional, but good practice: ensure python-app starts first
+      - python-app
+    # Add restart policy if needed
+    # restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
