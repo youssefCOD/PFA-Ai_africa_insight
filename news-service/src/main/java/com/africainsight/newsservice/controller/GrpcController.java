@@ -5,10 +5,6 @@ import com.africainsight.newsservice.grpc.PythonScrapingServiceGrpc;
 import org.springframework.web.bind.annotation.*;
 import source.SourceProto;
 
-// Import your generated gRPC classes and service
-//import your.package.path.SourceProto; // Replace with your actual package path
-//import your.package.path.PythonScrapingServiceGrpc; // Replace with your actual package path
-//import your.package.path.AddSourceRequest; // Replace with your actual package path
 
 
 @RestController

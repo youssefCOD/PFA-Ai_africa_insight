@@ -4,7 +4,6 @@ package com.africainsight.newsservice.grpc;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,9 +11,7 @@ import org.springframework.stereotype.Service;
 import source.SourceProto;
 import source.SourceServiceGrpc;
 
-// Import your generated gRPC classes
-//import your.package.path.SourceProto; // Replace with your actual package path
-//import your.package.path.SourceServiceGrpc; // Replace with your actual package path
+
 
 @Service
 public class PythonScrapingServiceGrpc {
