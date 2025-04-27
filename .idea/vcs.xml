@@ -4,6 +4,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Africa-AI-Insight-Scraper" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Africa-AI-Insight-Scraper/protos" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Africa-AI-Insight-Scraper/sub" vcs="Git" />
   </component>
 </project>
