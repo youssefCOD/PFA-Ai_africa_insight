@@ -22,6 +22,11 @@ public class NewsService {
     return newsList.stream().map(NewsMapper::toDto).toList();
   }
 
+  public NewsResponseDto findById(Long id) {
+    News news = newsRepository.findById(id).orElse(null);
+    return news != null ? NewsMapper.toDto(news) : null;
+  }
+
   public NewsResponseDto addNews(NewsRequestDto postRequestDto) {
     News post = newsRepository.save(NewsMapper.toModel(postRequestDto));
     return NewsMapper.toDto(post);

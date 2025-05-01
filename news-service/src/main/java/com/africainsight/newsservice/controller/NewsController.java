@@ -30,4 +30,12 @@ public class NewsController {
     NewsResponseDto postResponseDto = newsService.addNews(postRequestDto);
     return ResponseEntity.ok().body(postResponseDto);
   }
+
+//  @GetMapping("/{id}")
+//  public ResponseEntity<NewsResponseDto> getNewsById(@PathVariable Long id) {
+//    return newsService
+//        .findById(id) != null ?
+//        ResponseEntity.ok().body(newsService.findById(id))
+//        : ResponseEntity.notFound().build();
+//  }
 }
